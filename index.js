@@ -8,7 +8,6 @@ function getRandomElement(arr){
     return arr[randomIndex];
 }
 
-
 function result(userSelect, compSelect){
     let userWin = true;
     if(userSelect === compSelect){
@@ -25,11 +24,11 @@ function result(userSelect, compSelect){
     }
 
     if(userWin === true){
-        $(".feed").text("You Won computer choose "+compSelect);
+        $(".feed").text("You Won!!! computer choosed "+compSelect);
         $(".feed").css("background-color","green");
         console.log("won");
     }else{
-        $(".feed").text("You Lost computer choose "+compSelect);
+        $(".feed").text("You Lost!!! computer choosed "+compSelect);
         $(".feed").css("background-color","red");
         console.log("Lost");
     }
@@ -37,7 +36,7 @@ function result(userSelect, compSelect){
     scoreUpdation(userWin, userSelect, compSelect);
 }
 
-function scoreUpdation(userWin, userSelect, compSelect){
+function scoreUpdation(userWin){
     if(userWin === true) userScore++;
     else compScore++;
     $(".c-score").text(compScore);
@@ -49,9 +48,6 @@ function scoreUpdation(userWin, userSelect, compSelect){
 $("img").click(function(){
     const userSelect = this.classList[0];
     const compSelect = getRandomElement(mapping);
-
-    console.log(userSelect);
-    console.log(compSelect);
     result(userSelect,compSelect);
 });
 
